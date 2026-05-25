@@ -1,0 +1,87 @@
+[
+  {
+    "goal": 1,
+    "name": "No Poverty",
+    "icon": "images/icons/sd-1.png"
+  },
+  {
+    "goal": 2,
+    "name": "Zero Hunger",
+    "icon": "images/icons/sd-2.png"
+  },
+  {
+    "goal": 3,
+    "name": "Good Health and Well-being",
+    "icon": "images/icons/sd-3.png"
+  },
+  {
+    "goal": 4,
+    "name": "Quality Education",
+    "icon": "images/icons/sd-4.png"
+  },
+  {
+    "goal": 5,
+    "name": "Gender Equality",
+    "icon": "images/icons/sd-5.png"
+  },
+  {
+    "goal": 6,
+    "name": "Clean Water and Sanitation",
+    "icon": "images/icons/sd-6.png"
+  },
+  {
+    "goal": 7,
+    "name": "Affordable and Clean Energy",
+    "icon": "images/icons/sd-7.png"
+  },
+  {
+    "goal": 8,
+    "name": "Decent Work and Economic Growth",
+    "icon": "images/icons/sd-8.png"
+  },
+  {
+    "goal": 9,
+    "name": "Industry, Innovation and Infrastructure",
+    "icon": "images/icons/sd-9.png"
+  },
+  {
+    "goal": 10,
+    "name": "Reduced Inequalities",
+    "icon": "images/icons/sd-10.png"
+  },
+  {
+    "goal": 11,
+    "name": "Sustainable Cities and Communities",
+    "icon": "images/icons/sd-11.png"
+  },
+  {
+    "goal": 12,
+    "name": "Responsible Consumption and Production",
+    "icon": "images/icons/sd-12.png"
+  },
+  {
+    "goal": 13,
+    "name": "Climate Action",
+    "icon": "images/icons/sd-13.png"
+  },
+  {
+    "goal": 14,
+    "name": "Life Below Water",
+    "icon": "images/icons/sd-14.png"
+  },
+  {
+    "goal": 15,
+    "name": "Life on Land",
+    "icon": "images/icons/sd-15.png"
+  },
+  {
+    "goal": 16,
+    "name": "Peace, Justice and Strong Institutions",
+    "icon": "images/icons/sd-16.png"
+  },
+  {
+    "goal": 17,
+    "name": "Partnerships for the Goals",
+    "icon": "images/icons/sd-17.png"
+  }
+]
