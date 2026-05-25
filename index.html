@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDG Nigeria</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="landing">
+  <header class="landing-topbar">
+    <a class="landing-brand" href="index.html"><img src="images/sdglogo.png" alt="SDG Nigeria"><span>SDG<br><b>Nigeria</b></span></a>
+    <nav class="landing-nav"><a href="dashboard.html#/goal/3">Dashboard</a></nav>
+  </header>
+
+  <main class="landing-page landing-old-design">
+    <section class="sdg-banner-original">
+      <div class="banner-inner-original">
+        <h1>SUSTAINABLE DEVELOPMENT <strong>GOALS</strong></h1>
+        <p>Browse data on global SDG indicators for Nigerian states. Click one of the goals on the wheel to begin.</p>
+      </div>
+    </section>
+
+    <section class="indicator-original">
+      <div class="indicator-heading-original">
+        <h2>Browse data on <span>global SDG indicators</span> for <span>Nigerian</span> States. <br>Click on one of the goals to begin</h2>
+      </div>
+      <div class="original-wheel-layout">
+        <div class="original-wheel-wrap">
+          <div id="goalWheel" class="original-goal-wheel" aria-label="Interactive SDG goal wheel"></div>
+        </div>
+        <div class="original-goal-panel">
+          <div class="selected-goal-header">
+            <img id="homeGoalPanelIcon" src="images/icons/sd-3.png" alt="Goal icon">
+            <div>
+              <h3 id="homeGoalPanelTitle">Good Health and Well-being</h3>
+              <p id="homeGoalPanelText">Ensure healthy lives and promote well-being for all at all ages.</p>
+            </div>
+          </div>
+          <div class="home-indicator-heading">Related Indicators</div>
+          <div id="homeGoalIndicators" class="home-indicator-list"></div>
+          <p class="indicator-help">Click on an indicator to view detailed data, charts, maps and state comparisons.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="view home-goal-cards landing-cards-section old-landing-cards">
+      <h2 class="home-section-title">All Sustainable Development Goals</h2>
+      <div class="goal-grid" id="homeGoals"></div>
+    </section>
+  </main>
+  <footer class="landing-footer">© 2026 SDG Nigeria · Data for a better Nigeria</footer>
+  <script src="js/landing.js"></script>
+</body>
+</html>

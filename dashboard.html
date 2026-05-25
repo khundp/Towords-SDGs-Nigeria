@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDG Nigeria Dashboard</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body data-page="dashboard">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><img src="images/sdglogo.png" alt="SDG Nigeria"><span>SDG<br><b>Nigeria</b></span></a>
+    <nav class="side-nav" id="sideGoals"></nav>
+    <a class="download-report" href="#/goal/3">Explore Goals</a>
+    <small class="copyright">© 2026 SDG Nigeria<br>Data for a better Nigeria.</small>
+  </aside>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="menu" id="menuBtn">☰</button>
+      <div class="search-wrap"><input id="globalSearch" type="search" placeholder="Search indicators..."><div id="searchResults" class="search-results"></div></div>
+      <a href="index.html" class="top-action">Explore Goals</a>
+    </header>
+
+    <section id="homeView" class="home-view-original">
+      <section class="sdg-banner-original">
+        <div class="banner-inner-original">
+          <h1>SUSTAINABLE DEVELOPMENT <strong>GOALS</strong></h1>
+          <p>Browse data on global SDG indicators for Nigerian states. Click one of the goals on the wheel to begin.</p>
+        </div>
+      </section>
+      <section class="indicator-original">
+        <div class="indicator-heading-original">
+          <h2>Browse data on <span>global SDG indicators</span> for <span>Nigerian</span> States</h2>
+          <p>Select any SDG goal from the wheel or from the cards below.</p>
+        </div>
+        <div class="original-wheel-layout">
+          <div class="original-wheel-wrap">
+            <div id="goalWheel" class="original-goal-wheel" aria-label="Interactive SDG goal wheel"></div>
+          </div>
+          <div class="original-goal-panel">
+            <h3 id="homeGoalPanelTitle">Goal 3: Good Health and Well-being</h3>
+            <p id="homeGoalPanelText">Explore indicators, maps, charts, definitions and state comparisons for each Sustainable Development Goal.</p>
+            <a id="homeGoalPanelLink" href="#/goal/3">Open Selected Goal</a>
+          </div>
+        </div>
+      </section>
+      <section class="view home-goal-cards">
+        <h2 class="home-section-title">All Sustainable Development Goals</h2>
+        <div class="goal-grid" id="homeGoals"></div>
+      </section>
+    </section>
+
+    <section id="goalView" class="view goal-view hidden">
+      <div class="goal-hero">
+        <div class="goal-icon"><img id="goalIcon" src="" alt=""></div>
+        <div class="goal-title-wrap"><span id="goalBadge" class="goal-badge"></span><h1 id="indicatorTitle"></h1><p id="indicatorDescription"></p></div>
+        <a href="index.html" class="back-btn">← Back to Goals</a>
+      </div>
+
+      <section class="dashboard-card main-dashboard">
+        <nav class="tabs" id="tabs">
+          <button class="tab active" data-tab="overview">▮ Overview</button>
+          <button class="tab" data-tab="bar">▥ Bar Chart</button>
+          <button class="tab" data-tab="map">⌖ Map View</button>
+          <button class="tab" data-tab="line">⌁ Line Chart</button>
+          <button class="tab" data-tab="table">▦ Data Table</button>
+          <button class="tab" data-tab="definition">ⓘ Definition</button>
+          <button class="tab" data-tab="footnotes">⊙ Footnotes</button>
+        </nav>
+
+        <div class="filters">
+          <label>Year<select id="yearFilter"></select></label>
+          <label>States for comparison <select id="stateAddFilter"></select><small class="filter-help">Choose a state to add it to the comparison. Select more states one by one.</small></label>
+          <div class="selected-state-box"><div class="selected-state-title">Selected states</div><div id="selectedStateChips" class="state-chips"></div></div>
+          <button id="downloadCsv" class="download-data">⇩ Download Data</button>
+        </div>
+
+        <div id="tab-overview" class="tab-pane active">
+          <div class="overview-grid">
+            <article class="chart-card"><h3 id="barTitle"></h3><div class="svg-box" id="barChart"></div><a class="mini-link" data-open="bar">View all states →</a></article>
+            <article class="chart-card"><h3 id="lineTitle"></h3><div class="svg-box" id="lineChart"></div><a class="mini-link" data-open="line">View full trend →</a></article>
+            <article class="chart-card"><div class="card-head"><h3 id="mapTitle"></h3><select id="mapMode"><option value="bubble">Bubble Map</option><option value="heat">Heat Map</option></select></div><div class="svg-box map-box" id="mapChart"></div><a class="mini-link" data-open="map">View full map →</a></article>
+          </div>
+          <article class="chart-card table-card"><h3>Data Table <span id="tableStateName"></span></h3><div class="table-wrap"><table id="overviewTable"></table></div><a class="mini-link" data-open="table">View full data table →</a></article>
+        </div>
+
+        <div id="tab-bar" class="tab-pane"><article class="chart-card large"><h3 id="barTitleFull"></h3><div class="svg-box large-box" id="barChartFull"></div></article></div>
+        <div id="tab-map" class="tab-pane"><article class="chart-card large"><div class="card-head"><h3 id="mapTitleFull"></h3><select id="mapModeFull"><option value="bubble">Bubble Map</option><option value="heat">Heat Map</option></select></div><div class="svg-box large-map" id="mapChartFull"></div></article></div>
+        <div id="tab-line" class="tab-pane"><article class="chart-card large"><h3 id="lineTitleFull"></h3><div class="svg-box large-box" id="lineChartFull"></div></article></div>
+        <div id="tab-table" class="tab-pane"><article class="chart-card large"><div class="card-head"><h3>Full Data Table</h3><input id="tableSearch" class="table-search" placeholder="Search state/year/value..."></div><div class="table-wrap tall"><table id="dataTable"></table></div></article></div>
+        <div id="tab-definition" class="tab-pane"><article class="info-card" id="definitionBlock"></article></div>
+        <div id="tab-footnotes" class="tab-pane"><article class="info-card" id="footnotesBlock"></article></div>
+      </section>
+
+      <section class="prev-next" id="prevNextBlock"></section>
+      <section class="related-wrap dashboard-card"><h2 id="relatedTitle"></h2><div class="related-grid" id="relatedIndicators"></div><a id="viewAllGoal" class="view-all" href="#">View All Indicators</a></section>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
